@@ -1,44 +1,43 @@
 using System;
 using CarListApp.maui.Models;
+using SQLite;
 
 namespace CarListApp.maui.Services;
 
 public class CarService
 {
+    private SQLiteConnection conn;
+    string _dbPath;
+    public string StatusMessage;
+
+    public CarService(string dbPath)
+    {
+        _dbPath = dbPath;
+    }
+
+    private void Init()
+    {
+        if (conn != null)
+        {
+            return;
+        }
+
+        conn = new SQLiteConnection(_dbPath);
+        conn.CreateTable<Car>();
+    }
+
     public List<Car> GetCars()
     {
-        return new List<Car>()
+        try
         {
-            new Car
-            {
-                Id = 1, Make = "Honda", Model = "Fit", Vin="123"
-            },
-            new Car
-            {
-                Id = 2, Make = "Jeep", Model = "Grand Cherokee", Vin="123"
-            },
-            new Car
-            {
-                Id = 3, Make = "Range Rover", Model = "LandRover", Vin="123"
-            },
-            new Car
-            {
-                Id = 4, Make = "Dodge", Model = "TRX", Vin="123"
-            },
-            new Car
-            {
-                Id = 5, Make = "Ford", Model = "Raptor", Vin="123"
-            },
-            new Car
-            {
-                Id = 6, Make = "Mercedes Benz", Model = "S500", Vin="123"
-            },
-            new Car
-            {
-                Id = 7, Make = "BMW", Model = "M5", Vin="123"
-            }
-
-        };
+            Init();
+            return conn.Table<Car>().ToList();
+        }
+        catch (Exception)
+        {
+            StatusMessage = "Failed to retrieve data";
+        }
+        return new List<Car>();
     }
 
 
