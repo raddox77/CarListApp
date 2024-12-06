@@ -16,10 +16,23 @@ public partial class CarListViewModel : BaseViewModel
     public CarListViewModel(CarService CarService)
     {
         Title = "Car List";
+        //GetCarList.Wait();
+        InitializeAsync();
+    }
+
+    private async void InitializeAsync()
+    {
+        await GetCarList();
     }
 
     [ObservableProperty]
     bool isRefreshing;
+    [ObservableProperty]
+    string make;
+    [ObservableProperty]
+    string model;
+    [ObservableProperty]
+    string vin;
 
     [RelayCommand]
     async Task GetCarList()
@@ -49,12 +62,53 @@ public partial class CarListViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    async Task GetCarDetails(Car car)
+    async Task GetCarDetails(int id)
     {
-        if(car == null) return;
-        await Shell.Current.GoToAsync(nameof(CarDetailsPage), true, new Dictionary<string, object> 
-        { 
-            { nameof(Car), car }
-        });
+        if(id == 0) return;
+        await Shell.Current.GoToAsync($"{nameof(CarDetailsPage)}?id={id}", true);
+    }
+
+    [RelayCommand]
+    async Task AddCar()
+    {
+        if(string.IsNullOrEmpty(Make) || string.IsNullOrEmpty(Model) || string.IsNullOrEmpty(vin))
+        {
+            await Shell.Current.DisplayAlert("Invalid Data", "Please insert valid data", "ok");
+            return;
+        }
+        var car = new Car
+        {
+            Make = Make,
+            Model = Model,
+            Vin = Vin
+        };
+
+        App.CarService.AddCar(car);
+        await Shell.Current.DisplayAlert("Info", App.CarService.StatusMessage, "Ok");
+        await GetCarList();
+    }
+
+    [RelayCommand]
+    async Task DeleteCar(int id)
+    {
+        if (id==0)
+        {
+            await Shell.Current.DisplayAlert("Invalid Record", "Please try again", "Ok");
+            return;
+        }
+        var result = App.CarService.DeleteCar(id);
+        if(result == 0) await Shell.Current.DisplayAlert("Operation Failed", "Pease insert valid data", "Ok");
+        else
+        {
+            await Shell.Current.DisplayAlert("Deltion Successful", "Reord Removed Successfully", "Ok");
+            await GetCarList();
+        }
+
+    }
+
+    [RelayCommand]
+    async void UpdateCar(int id)
+    {
+        return;
     }
 }
