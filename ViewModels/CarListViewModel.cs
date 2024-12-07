@@ -17,7 +17,7 @@ public partial class CarListViewModel : BaseViewModel
     {
         Title = "Car List";
         //GetCarList.Wait();
-        InitializeAsync();
+        //InitializeAsync();
     }
 
     private async void InitializeAsync()
@@ -64,14 +64,29 @@ public partial class CarListViewModel : BaseViewModel
     [RelayCommand]
     async Task GetCarDetails(int id)
     {
-        if(id == 0) return;
-        await Shell.Current.GoToAsync($"{nameof(CarDetailsPage)}?id={id}", true);
+        if(id == 0) 
+        {
+            await Shell.Current.DisplayAlert("Error","ID was not passed", "Ok");
+            return;
+        }
+        else
+        {
+            try
+            {
+                await Shell.Current.DisplayAlert("Info",$"ID is [{id}]", "Ok");
+                await Shell.Current.GoToAsync($"{nameof(CarDetailsPage)}?Id={id}", true);
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine($"{ex.Message} : " + id );
+            }
+        }
     }
 
     [RelayCommand]
     async Task AddCar()
     {
-        if(string.IsNullOrEmpty(Make) || string.IsNullOrEmpty(Model) || string.IsNullOrEmpty(vin))
+        if(string.IsNullOrEmpty(Make) || string.IsNullOrEmpty(Model) || string.IsNullOrEmpty(Vin))
         {
             await Shell.Current.DisplayAlert("Invalid Data", "Please insert valid data", "ok");
             return;
@@ -107,8 +122,22 @@ public partial class CarListViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    async void UpdateCar(int id)
+    async void UpdateCar()
     {
-        return;
+        if(string.IsNullOrEmpty(Make) || string.IsNullOrEmpty(Model) || string.IsNullOrEmpty(Vin))
+        {
+            await Shell.Current.DisplayAlert("Invalid Data", "Please insert valid data", "ok");
+            return;
+        }
+        var car = new Car
+        {
+            Make = Make,
+            Model = Model,
+            Vin = Vin
+        };
+
+        App.CarService.UpdateCar(car);
+        await Shell.Current.DisplayAlert("Info", App.CarService.StatusMessage, "Ok");
+        await GetCarList();
     }
 }

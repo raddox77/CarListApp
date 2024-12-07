@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto,*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <VerticalStackLayout Padding="5" Grid.Row="0" Margin="9">
@@ -32,7 +32,7 @@
             Command="{Binding GetCarListCommand}" Margin="9"/>
 
         <RefreshView Grid.Row="4"
-                Command="{Binding GetCareListCommand}" 
+                Command="{Binding GetCarListCommand}" 
                 IsRefreshing="{Binding IsRefreshing}">
             <CollectionView ItemsSource="{Binding Cars}" SelectionMode="None">
                 <CollectionView.ItemTemplate>

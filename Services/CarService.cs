@@ -86,4 +86,23 @@ public class CarService
         }
         return 0;
     }
+
+    public void UpdateCar(Car car)
+    {
+        try
+        {
+            Init(); // Connect to DB
+            if(car == null)
+            {
+                throw new Exception("Invalid Car Record");
+            }
+            var result = conn.Update(car);
+            StatusMessage = result == 0 ? "Update Failed" : "Update Succeeded";
+
+        }
+        catch(Exception)    
+        {
+            StatusMessage = "Failed to Update data.";
+        }
+    }
 }
