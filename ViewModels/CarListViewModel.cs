@@ -11,13 +11,16 @@ namespace CarListApp.maui.ViewModels;
 
 public partial class CarListViewModel : BaseViewModel
 {
+    const string editButtonText = "Update Car";
+    const string createButtonText = "Add Car";
     public ObservableCollection<Car> Cars { get; private set;} = new ();
 
     public CarListViewModel(CarService CarService)
     {
         Title = "Car List";
+        AddEditButtonText = createButtonText;
         //GetCarList.Wait();
-        //InitializeAsync();
+        InitializeAsync();
     }
 
     private async void InitializeAsync()
@@ -33,6 +36,10 @@ public partial class CarListViewModel : BaseViewModel
     string model;
     [ObservableProperty]
     string vin;
+    [ObservableProperty]
+    string addEditButtonText;
+    [ObservableProperty]
+    int carId;
 
     [RelayCommand]
     async Task GetCarList()
@@ -73,7 +80,7 @@ public partial class CarListViewModel : BaseViewModel
         {
             try
             {
-                await Shell.Current.DisplayAlert("Info",$"ID is [{id}]", "Ok");
+                //await Shell.Current.DisplayAlert("Info",$"ID is [{id}]", "Ok");
                 await Shell.Current.GoToAsync($"{nameof(CarDetailsPage)}?Id={id}", true);
             }
             catch(Exception ex)
@@ -84,7 +91,7 @@ public partial class CarListViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    async Task AddCar()
+    async Task SaveCar()
     {
         if(string.IsNullOrEmpty(Make) || string.IsNullOrEmpty(Model) || string.IsNullOrEmpty(Vin))
         {
@@ -98,9 +105,19 @@ public partial class CarListViewModel : BaseViewModel
             Vin = Vin
         };
 
-        App.CarService.AddCar(car);
-        await Shell.Current.DisplayAlert("Info", App.CarService.StatusMessage, "Ok");
+        if (CarId != 0 )
+        {
+            car.Id = CarId;
+            App.CarService.UpdateCar(car);
+            await Shell.Current.DisplayAlert("Info", App.CarService.StatusMessage, "Ok");
+        }
+        else
+        {
+            App.CarService.AddCar(car);
+            await Shell.Current.DisplayAlert("Info", App.CarService.StatusMessage, "Ok");
+        }
         await GetCarList();
+        await ClearForm();
     }
 
     [RelayCommand]
@@ -139,5 +156,27 @@ public partial class CarListViewModel : BaseViewModel
         App.CarService.UpdateCar(car);
         await Shell.Current.DisplayAlert("Info", App.CarService.StatusMessage, "Ok");
         await GetCarList();
+    }
+
+    // 
+    [RelayCommand]
+    async Task SetEditMode(int id)
+    {
+        AddEditButtonText = editButtonText;
+        CarId = id;
+        var car = App.CarService.GetCar(id);
+        Make = car.Make;
+        Model = car.Model;
+        Vin = car.Vin;
+    }
+
+    [RelayCommand]
+    async Task ClearForm()
+    {
+        AddEditButtonText = createButtonText;
+        CarId = 0;
+        Make = string.Empty;
+        Model = string.Empty;
+        Vin = string.Empty;
     }
 }
