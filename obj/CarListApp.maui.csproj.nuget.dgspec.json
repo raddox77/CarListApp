@@ -60,6 +60,10 @@
               "target": "Package",
               "version": "[8.2.0, )"
             },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -68,11 +72,19 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Microsoft.Maui.Essentials": {
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -107,6 +119,10 @@
               "target": "Package",
               "version": "[8.2.0, )"
             },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -115,11 +131,19 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Microsoft.Maui.Essentials": {
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -154,6 +178,10 @@
               "target": "Package",
               "version": "[8.2.0, )"
             },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -162,11 +190,19 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Microsoft.Maui.Essentials": {
+              "target": "Package",
+              "version": "[9.0.12, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
