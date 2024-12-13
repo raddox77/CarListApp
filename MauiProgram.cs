@@ -34,9 +34,13 @@ public static class MauiProgram
   // ViewModels
 		builder.Services.AddSingleton<CarListViewModel>();
 		builder.Services.AddTransient<CarDetailsViewModel>();
+		builder.Services.AddTransient<LoadingPageViewModel>();
+		builder.Services.AddTransient<LoginViewModel>();
 
   // Views or pages
 		builder.Services.AddSingleton<MainPage>();
+		builder.Services.AddSingleton<LoadingPage>();
+		builder.Services.AddSingleton<LoginPage>();
 		builder.Services.AddTransient<CarDetailsPage>();
 
 #if DEBUG

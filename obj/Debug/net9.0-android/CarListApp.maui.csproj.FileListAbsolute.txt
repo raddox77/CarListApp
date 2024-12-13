@@ -14,8 +14,19 @@
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/mauiimage.inputs
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/mauifont.inputs
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/mauisplash.inputs
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/sp/drawable-hdpi/splash.png
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/sp/drawable-mdpi/splash.png
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/sp/drawable-v31/maui_splash_image.xml
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/sp/drawable-xhdpi/splash.png
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/sp/drawable-xxhdpi/splash.png
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/sp/drawable-xxxhdpi/splash.png
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/sp/drawable/maui_splash_image.xml
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/sp/values/maui_colors.xml
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/mauisplash.stamp
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/mauifont.stamp
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/f/FluentUI.cs
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/f/OpenSans-Regular.ttf
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/f/OpenSans-Semibold.ttf
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/r/mipmap-xxxhdpi/appicon_round.png
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/r/mipmap-xxhdpi/appicon_round.png
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/r/mipmap-xhdpi/appicon_round.png
@@ -50,6 +61,7 @@
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/case_map.txt
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/__Microsoft.Android.Resource.Designer.cs
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/res.flag
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/99C9A40D1EA9DF15-files.cache
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/resizetizer/5F31308764AA5775-files.cache
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/lp/99/jl/files.cache
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/lp/100/jl/files.cache
@@ -1323,6 +1335,9 @@
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/src/mono/com/google/android/material/textfield/TextInputLayout_OnEndIconChangedListenerImplementor.java
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/src/mono/MonoPackageManager_Resources.java
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/assets/AboutAssets.txt
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/assets/FluentUI.cs
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/assets/OpenSans-Regular.ttf
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/assets/OpenSans-Semibold.ttf
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/bin/packaged_resources
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/src/com/companyname/carlistapp/maui/R.java
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/_CompileJava.FileList.txt
