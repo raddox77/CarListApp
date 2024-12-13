@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/raddox/dotNETCode/CarListApp.maui/CarListApp.maui.csproj": {}
+    "/Users/raddox/dotNETCode/CarListApp/CarListApp.maui.csproj": {}
   },
   "projects": {
-    "/Users/raddox/dotNETCode/CarListApp.maui/CarListApp.maui.csproj": {
+    "/Users/raddox/dotNETCode/CarListApp/CarListApp.maui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/raddox/dotNETCode/CarListApp.maui/CarListApp.maui.csproj",
+        "projectUniqueName": "/Users/raddox/dotNETCode/CarListApp/CarListApp.maui.csproj",
         "projectName": "CarListApp.maui",
-        "projectPath": "/Users/raddox/dotNETCode/CarListApp.maui/CarListApp.maui.csproj",
+        "projectPath": "/Users/raddox/dotNETCode/CarListApp/CarListApp.maui.csproj",
         "packagesPath": "/Users/raddox/.nuget/packages/",
-        "outputPath": "/Users/raddox/dotNETCode/CarListApp.maui/obj/",
+        "outputPath": "/Users/raddox/dotNETCode/CarListApp/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [

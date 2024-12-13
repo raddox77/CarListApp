@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zAsGTW4j3MU=",
+  "dgSpecHash": "wkfMdoXQ/wY=",
   "success": true,
-  "projectFilePath": "/Users/raddox/dotNETCode/CarListApp.maui/CarListApp.maui.csproj",
+  "projectFilePath": "/Users/raddox/dotNETCode/CarListApp/CarListApp.maui.csproj",
   "expectedPackageFiles": [
     "/Users/raddox/.nuget/packages/communitytoolkit.mvvm/8.2.0/communitytoolkit.mvvm.8.2.0.nupkg.sha512",
     "/Users/raddox/.nuget/packages/googlegson/2.11.0.3/googlegson.2.11.0.3.nupkg.sha512",
