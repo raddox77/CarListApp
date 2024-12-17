@@ -30,6 +30,12 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
+    <!-- SecureStorage setting -->
+    <EnableKeychain>true</EnableKeychain>
+    <Entitlements>Platforms/iOS/Entitlements.plist</Entitlements>
+    <CodesignEntitlements>Platforms/iOS/Entitlements.plist</CodesignEntitlements>
+
+
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
 		<WindowsPackageType>None</WindowsPackageType>
 
@@ -70,6 +76,7 @@
 		<PackageReference Include="Microsoft.Maui.Essentials" Version="9.0.12" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
     <!--<PackageReference Include="Microsoft.NET.ILLink.Tasks" Version="9.0.0" />
 -->
 	</ItemGroup>

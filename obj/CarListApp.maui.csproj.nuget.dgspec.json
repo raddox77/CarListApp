@@ -86,6 +86,10 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.9.172, )"
@@ -145,6 +149,10 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.9.172, )"
@@ -203,6 +211,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",

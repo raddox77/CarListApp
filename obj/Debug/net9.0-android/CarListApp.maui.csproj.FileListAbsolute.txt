@@ -179,6 +179,10 @@
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/Microsoft.Extensions.Options.ConfigurationExtensions.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/Microsoft.Extensions.Options.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/Microsoft.Extensions.Primitives.dll
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/Microsoft.IdentityModel.Abstractions.dll
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/Microsoft.IdentityModel.Logging.dll
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/Microsoft.IdentityModel.Tokens.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/Microsoft.Maui.Controls.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/Microsoft.Maui.Controls.pdb
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/Microsoft.Maui.Controls.Xaml.dll
@@ -255,6 +259,7 @@
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/System.Globalization.Calendars.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/System.Globalization.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/System.Globalization.Extensions.dll
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/System.IdentityModel.Tokens.Jwt.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/System.IO.Compression.Brotli.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/System.IO.Compression.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/arm64-v8a/System.IO.Compression.FileSystem.dll
@@ -593,6 +598,10 @@
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/Microsoft.Extensions.Options.ConfigurationExtensions.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/Microsoft.Extensions.Options.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/Microsoft.Extensions.Primitives.dll
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/Microsoft.IdentityModel.Abstractions.dll
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/Microsoft.IdentityModel.Logging.dll
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/Microsoft.IdentityModel.Tokens.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/Microsoft.Maui.Controls.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/Microsoft.Maui.Controls.pdb
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/Microsoft.Maui.Controls.Xaml.dll
@@ -669,6 +678,7 @@
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/System.Globalization.Calendars.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/System.Globalization.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/System.Globalization.Extensions.dll
+/Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/System.IdentityModel.Tokens.Jwt.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/System.IO.Compression.Brotli.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/System.IO.Compression.dll
 /Users/raddox/dotNETCode/CarListApp/obj/Debug/net9.0-android/android/assets/x86_64/System.IO.Compression.FileSystem.dll

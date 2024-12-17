@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Web;
 using CarListApp.maui.Services;
+using Microsoft.Maui.Controls;
+using System.Collections.Generic;
 
 namespace CarListApp.maui.ViewModels;
 

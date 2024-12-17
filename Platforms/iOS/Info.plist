@@ -29,6 +29,10 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
 </dict>
+
+<key>CFBundleIdentifier</key>
+<string>com.yourcompany.carlistapp.maui</string>
+
 <key>NSAppTransportSecurity</key>
 <dict>
     <key>NSAllowsArbitraryLoads</key>

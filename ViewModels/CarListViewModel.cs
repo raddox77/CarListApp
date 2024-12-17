@@ -54,10 +54,17 @@ public partial class CarListViewModel : BaseViewModel
             if(Cars.Any()) Cars.Clear();
             //var cars = App.CarService.GetCars();
             var cars = new List<Car>();
+            await Shell.Current.DisplayAlert("GetCarList", "Calling apiServices.GetCars", "Ok");
             cars = await carApiService.GetCars();
+
+            await Shell.Current.DisplayAlert("GetCarList", "Done with apiServices.GetCars", "Ok");
+
+            await Shell.Current.DisplayAlert("GetCarList", "Loopging through list", "Ok");
             foreach (var car in cars)
             {
+                await Shell.Current.DisplayAlert("GetCarList", $"Make: {car.Make}", "Ok");
                 Cars.Add(car);
+                await Shell.Current.DisplayAlert("GetCarList", $"Added: {car.Make}", "Ok");
             }
         }
         catch (Exception ex)

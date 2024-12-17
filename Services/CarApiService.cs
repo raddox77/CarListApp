@@ -1,5 +1,7 @@
 using System;
+using System.Net;
 using System.Net.Http.Json;
+using System.Net.Mail;
 using System.Text.Json.Serialization;
 using CarListApp.maui.Models;
 using Microsoft.Maui.Controls.PlatformConfiguration;
@@ -22,12 +24,20 @@ public class CarApiService
     {
         try
         {
+            await Shell.Current.DisplayAlert("SetAuthToken", "Called SetAuthToken", "OK");
+            await SetAuthToken();
+
+            await Shell.Current.DisplayAlert("SetAuthToken", "SetAuthToken Done", "OK");
+
+            await Shell.Current.DisplayAlert("GetCars", "Calling API /cars", "OK");
             var response = await _httpClient.GetStringAsync("/cars");
+            
+            await Shell.Current.DisplayAlert("GetCars", $"Response: {response}", "OK");
             return JsonConvert.DeserializeObject<List<Car>>(response);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            StatusMessage = "Failed to retrieve data";
+            StatusMessage = $"Failed to retrieve data: {ex.Message}";   
         }
         return null;
     }
@@ -91,6 +101,30 @@ public class CarApiService
         {
             StatusMessage = "Failed to update data";
         }
+    }
+
+    public async Task<AuthResponseModel> Login(LoginModel loginModel)
+    {
+        try 
+        {
+            var response = await _httpClient.PostAsJsonAsync("/login", loginModel);
+            response.EnsureSuccessStatusCode();
+            StatusMessage = "Login Successful";
+
+            return JsonConvert.DeserializeObject<AuthResponseModel>(await response.Content.ReadAsStringAsync());
+        }
+        catch (Exception)
+        {
+            StatusMessage = "Failed to login successfuly";
+            return default;
+        }
+    }
+
+    public async Task SetAuthToken()
+    {
+        var token = await SecureStorage.GetAsync("Token");
+        await Shell.Current.DisplayAlert("SetAuthToken", token, "OK");
+        _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
     }
 
 }
