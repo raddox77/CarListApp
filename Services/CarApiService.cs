@@ -24,12 +24,11 @@ public class CarApiService
     {
         try
         {
-            await Shell.Current.DisplayAlert("SetAuthToken", "Called SetAuthToken", "OK");
+            //await Shell.Current.DisplayAlert("SetAuthToken", "Called SetAuthToken", "OK");
             await SetAuthToken();
+            //await Shell.Current.DisplayAlert("SetAuthToken", "SetAuthToken Done", "OK");
 
-            await Shell.Current.DisplayAlert("SetAuthToken", "SetAuthToken Done", "OK");
-
-            await Shell.Current.DisplayAlert("GetCars", "Calling API /cars", "OK");
+            //await Shell.Current.DisplayAlert("GetCars", "Calling API /cars", "OK");
             var response = await _httpClient.GetStringAsync("/cars");
             
             await Shell.Current.DisplayAlert("GetCars", $"Response: {response}", "OK");
@@ -44,11 +43,13 @@ public class CarApiService
 
     public async Task<Car> GetCar(int id)
     {
-        //await Shell.Current.DisplayAlert("Debug",$"Inside of GetCar({id})","Ok");
+        await SetAuthToken();
+        await Shell.Current.DisplayAlert("Debug",$"Inside of GetCar({id})","Ok");
         try
         {
-            //await Shell.Current.DisplayAlert("Debug",$"Calling GetStringAsync(/car/ + {id})","Ok");
+            await Shell.Current.DisplayAlert("Debug",$"Calling GetStringAsync(/car/ + {id})","Ok");
             var response = await _httpClient.GetStringAsync("/cars/" + id);
+            await Shell.Current.DisplayAlert("Debug",$"Response: {response}","Ok");
             return JsonConvert.DeserializeObject<Car>(response);
         }
         catch (Exception)
@@ -60,7 +61,8 @@ public class CarApiService
     }
 
     public async Task AddCar(Car car)
-    {
+    { 
+        await SetAuthToken();
         try
         {
             var response = await _httpClient.PostAsJsonAsync("/cars/", car );
@@ -75,6 +77,7 @@ public class CarApiService
 
     public async Task DeleteCar(int id)
     {
+        await SetAuthToken();
         try
         {
             var response = await _httpClient.DeleteAsync("/cars/" + id );
@@ -90,6 +93,7 @@ public class CarApiService
 
     public async Task UpdateCar(int id, Car car)
     {
+       await SetAuthToken();
        try
         {
             await Shell.Current.DisplayAlert("Debug", $"In update for id [{id}]", "ok");
@@ -104,7 +108,7 @@ public class CarApiService
     }
 
     public async Task<AuthResponseModel> Login(LoginModel loginModel)
-    {
+    { 
         try 
         {
             var response = await _httpClient.PostAsJsonAsync("/login", loginModel);
@@ -123,7 +127,7 @@ public class CarApiService
     public async Task SetAuthToken()
     {
         var token = await SecureStorage.GetAsync("Token");
-        await Shell.Current.DisplayAlert("SetAuthToken", token, "OK");
+        //await Shell.Current.DisplayAlert("SetAuthToken", token, "OK");
         _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
     }
 

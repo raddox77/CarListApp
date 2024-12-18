@@ -36,6 +36,7 @@ public partial class CarDetailsViewModel : BaseViewModel, IQueryAttributable
             Id = id;
             //Car = App.CarService.GetCar(Id);
             Car = await carApiService.GetCar(Id);
+    
             if (Car == null)
             {
                 await Shell.Current.DisplayAlert("No Recod Found", $"No records Found for Id: {Id}", "Ok");

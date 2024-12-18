@@ -52,25 +52,20 @@ public partial class CarListViewModel : BaseViewModel
         {
             IsLoading = true;
             if(Cars.Any()) Cars.Clear();
-            //var cars = App.CarService.GetCars();
+            
             var cars = new List<Car>();
-            await Shell.Current.DisplayAlert("GetCarList", "Calling apiServices.GetCars", "Ok");
+            
             cars = await carApiService.GetCars();
 
-            await Shell.Current.DisplayAlert("GetCarList", "Done with apiServices.GetCars", "Ok");
-
-            await Shell.Current.DisplayAlert("GetCarList", "Loopging through list", "Ok");
             foreach (var car in cars)
             {
-                await Shell.Current.DisplayAlert("GetCarList", $"Make: {car.Make}", "Ok");
                 Cars.Add(car);
-                await Shell.Current.DisplayAlert("GetCarList", $"Added: {car.Make}", "Ok");
             }
         }
         catch (Exception ex)
         {
             Debug.WriteLine($"Unable to get cars: {ex.Message}");
-            await Shell.Current.DisplayAlert("Error", "Failed to retieve list of cars.", "Ok");
+            await Shell.Current.DisplayAlert("Error", $"Failed to retieve list of cars. {ex.Message}", "Ok");
         }
         finally
         {
@@ -91,7 +86,7 @@ public partial class CarListViewModel : BaseViewModel
         {
             try
             {
-                await Shell.Current.DisplayAlert("Info",$"ID is [{id}]", "Ok");
+                //await Shell.Current.DisplayAlert("Info",$"ID is [{id}]", "Ok");
                 //await Shell.Current.GoToAsync($"{nameof(CarDetailsPage)}?Id={id}", true);
                 await Shell.Current.GoToAsync($"{nameof(CarDetailsPage)}?Id={id}", true);
             }
