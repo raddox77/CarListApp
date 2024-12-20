@@ -31,7 +31,7 @@ public class CarApiService
             //await Shell.Current.DisplayAlert("GetCars", "Calling API /cars", "OK");
             var response = await _httpClient.GetStringAsync("/cars");
             
-            await Shell.Current.DisplayAlert("GetCars", $"Response: {response}", "OK");
+            //await Shell.Current.DisplayAlert("GetCars", $"Response: {response}", "OK");
             return JsonConvert.DeserializeObject<List<Car>>(response);
         }
         catch (Exception ex)
@@ -44,12 +44,12 @@ public class CarApiService
     public async Task<Car> GetCar(int id)
     {
         await SetAuthToken();
-        await Shell.Current.DisplayAlert("Debug",$"Inside of GetCar({id})","Ok");
+        //await Shell.Current.DisplayAlert("Debug",$"Inside of GetCar({id})","Ok");
         try
         {
-            await Shell.Current.DisplayAlert("Debug",$"Calling GetStringAsync(/car/ + {id})","Ok");
+            //await Shell.Current.DisplayAlert("Debug",$"Calling GetStringAsync(/car/ + {id})","Ok");
             var response = await _httpClient.GetStringAsync("/cars/" + id);
-            await Shell.Current.DisplayAlert("Debug",$"Response: {response}","Ok");
+            //await Shell.Current.DisplayAlert("Debug",$"Response: {response}","Ok");
             return JsonConvert.DeserializeObject<Car>(response);
         }
         catch (Exception)
@@ -96,7 +96,7 @@ public class CarApiService
        await SetAuthToken();
        try
         {
-            await Shell.Current.DisplayAlert("Debug", $"In update for id [{id}]", "ok");
+            //await Shell.Current.DisplayAlert("Debug", $"In update for id [{id}]", "ok");
             var response = await _httpClient.PutAsJsonAsync("/cars/" + id, car);
             response.EnsureSuccessStatusCode();
             StatusMessage = "Update Successful";

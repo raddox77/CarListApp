@@ -28,7 +28,8 @@ public partial class CarListViewModel : BaseViewModel
     private async void InitializeAsync()
     {
         //await GetCarList();
-        await carApiService.GetCars();
+        //await carApiService.GetCars();
+        await GetCarList();
     }
 
     [ObservableProperty]
@@ -86,8 +87,6 @@ public partial class CarListViewModel : BaseViewModel
         {
             try
             {
-                //await Shell.Current.DisplayAlert("Info",$"ID is [{id}]", "Ok");
-                //await Shell.Current.GoToAsync($"{nameof(CarDetailsPage)}?Id={id}", true);
                 await Shell.Current.GoToAsync($"{nameof(CarDetailsPage)}?Id={id}", true);
             }
             catch(Exception ex)
@@ -147,7 +146,9 @@ public partial class CarListViewModel : BaseViewModel
         {
             await Shell.Current.DisplayAlert("Deltion Failed", "Reord Removed Successfully", "Ok");
         }
-        await carApiService.GetCars();
+
+        //await carApiService.GetCars();
+        await GetCarList();
     }
 
     [RelayCommand]
@@ -166,10 +167,9 @@ public partial class CarListViewModel : BaseViewModel
             Vin = Vin
         };
 
-        //await Shell.Current.DisplayAlert("Debug", $"Calling UpdateCar({car.Id})", "ok");
         //App.CarService.UpdateCar(car);
         await carApiService.UpdateCar(car.Id, car);
-        //await Shell.Current.DisplayAlert("Info", carApiService.StatusMessage, "Ok");
+        
         await carApiService.GetCars();
     }
 
@@ -177,11 +177,10 @@ public partial class CarListViewModel : BaseViewModel
     [RelayCommand]
     async Task SetEditMode(int id)
     {
-        //await Shell.Current.DisplayAlert("Debug", $"Passing [{id}] to SetEditMode", "OK");
+        
         AddEditButtonText = editButtonText;
         CarId = id;
-        //var car = App.CarService.GetCar(id);
-        //await Shell.Current.DisplayAlert("Debug", $"Calling GetCar({id})", "OK");
+        
         var car = await carApiService.GetCar(id);
         Make = car.Make;
         Model = car.Model;
